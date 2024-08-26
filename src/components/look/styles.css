@@ -1,0 +1,20 @@
+.lookbook-item {
+  width: 400px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.lookbook-media {
+  position: relative;
+}
+
+.lookbook-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+}

@@ -5,11 +5,11 @@ import { ErrorPage, Looks, Product } from "../pages";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Product />,
+    element: <Looks />,
   },
   {
-    path: "/looks/:id",
-    element: <Looks />,
+    path: "/product/:id",
+    element: <Product />,
   },
   {
     path: "*",

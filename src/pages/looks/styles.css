@@ -1,0 +1,22 @@
+.lookbook-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-product {
+  border: 1px solid black;
+  width: 400px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #0006;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+}
