@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Lookbook/static/css/main.616a83e9.css",
+    "main.js": "/Lookbook/static/js/main.007724f4.js",
+    "static/js/453.bf1e25fc.chunk.js": "/Lookbook/static/js/453.bf1e25fc.chunk.js",
+    "static/media/img4.jpeg": "/Lookbook/static/media/img4.d94b3026f659598558d6.jpeg",
+    "index.html": "/Lookbook/index.html",
+    "main.616a83e9.css.map": "/Lookbook/static/css/main.616a83e9.css.map",
+    "main.007724f4.js.map": "/Lookbook/static/js/main.007724f4.js.map",
+    "453.bf1e25fc.chunk.js.map": "/Lookbook/static/js/453.bf1e25fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.616a83e9.css",
+    "static/js/main.007724f4.js"
+  ]
+}
