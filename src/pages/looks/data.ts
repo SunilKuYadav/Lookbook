@@ -33,6 +33,11 @@ const dummyLookData = [
       { x: 60, y: 60, productId: 8, label: "Scarf" },
     ],
   },
+  {
+    id: 5,
+    video:
+      "https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_h264.mp4",
+  },
 ];
 
 export default dummyLookData;

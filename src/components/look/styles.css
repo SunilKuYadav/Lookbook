@@ -18,3 +18,18 @@
   height: 600px;
   object-fit: cover;
 }
+.lookbook-video {
+  width: 400px;
+  height: 500px;
+}
+.mute-button {
+  position: absolute;
+  bottom: 100px;
+  right: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

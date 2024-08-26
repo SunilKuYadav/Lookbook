@@ -20,6 +20,23 @@ const Looks = () => {
     };
   }, [currentLook]);
 
+  const [videoDuration, setVideoDuration] = useState<number | null>(null);
+  const [isVideo, setIsVideo] = useState(false);
+
+  useEffect(() => {
+    if (dummyLookData[currentLook].video) {
+      const videoElement = document.createElement("video");
+      videoElement.src = dummyLookData[currentLook].video || "";
+      videoElement.onloadedmetadata = () => {
+        setVideoDuration(videoElement.duration * 1000);
+      };
+      setIsVideo(true);
+    } else {
+      setIsVideo(false);
+      setVideoDuration(null);
+    }
+  }, [currentLook]);
+
   return (
     <div className="lookbook-container">
       <div className="lookbook-container-inner">
@@ -27,14 +44,17 @@ const Looks = () => {
           onClick={() => {
             setCurrentLook((prev) => {
               const val = (prev - 1) % dummyLookData.length;
-              console.log(val);
               return val === -1 ? dummyLookData.length - 1 : val;
             });
           }}
           className="control left"
         ></button>
         <div>
-          <Look item={dummyLookData[currentLook]} />
+          {dummyLookData[currentLook].image ? (
+            <Look item={dummyLookData[currentLook]} />
+          ) : (
+            <Look item={dummyLookData[currentLook]} />
+          )}
           <div
             style={{
               width: "400px",
@@ -50,7 +70,9 @@ const Looks = () => {
                   totalSize={dummyLookData.length}
                   active={currentLook === index}
                   done={index < currentLook}
-                  totalTime={Timer}
+                  totalTime={
+                    isVideo ? (videoDuration ? videoDuration : Timer) : Timer
+                  }
                 />
               );
             })}
