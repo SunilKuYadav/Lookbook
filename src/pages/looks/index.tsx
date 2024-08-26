@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 
 import "./styles.css";
 import dummyLookData from "./data";
@@ -9,19 +10,26 @@ const Timer = 5000;
 
 const Looks = () => {
   const [currentLook, setCurrentLook] = useState(0);
+  const [videoDuration, setVideoDuration] = useState<number | null>(null);
+  const [isVideo, setIsVideo] = useState(false);
+
+  const handlePrevMove = () => {
+    setCurrentLook((prev) => {
+      const val = (prev - 1) % dummyLookData.length;
+      return val === -1 ? dummyLookData.length - 1 : val;
+    });
+  };
+  const handleNextMove = () => {
+    setCurrentLook((prev) => (prev + 1) % dummyLookData.length);
+  };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentLook((prev) => (prev + 1) % dummyLookData.length);
-    }, Timer);
+    const timer = setTimeout(handleNextMove, Timer);
 
     return () => {
       clearTimeout(timer);
     };
   }, [currentLook]);
-
-  const [videoDuration, setVideoDuration] = useState<number | null>(null);
-  const [isVideo, setIsVideo] = useState(false);
 
   useEffect(() => {
     if (dummyLookData[currentLook].video) {
@@ -37,24 +45,20 @@ const Looks = () => {
     }
   }, [currentLook]);
 
+  const handlers = useSwipeable({
+    onSwipedDown: handlePrevMove,
+    onSwipedUp: handleNextMove,
+    swipeDuration: 500,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
   return (
     <div className="lookbook-container">
-      <div className="lookbook-container-inner">
-        <button
-          onClick={() => {
-            setCurrentLook((prev) => {
-              const val = (prev - 1) % dummyLookData.length;
-              return val === -1 ? dummyLookData.length - 1 : val;
-            });
-          }}
-          className="control left"
-        ></button>
+      <div {...handlers} className="lookbook-container-inner">
+        <button onClick={handlePrevMove} className="control left"></button>
         <div>
-          {dummyLookData[currentLook].image ? (
-            <Look item={dummyLookData[currentLook]} />
-          ) : (
-            <Look item={dummyLookData[currentLook]} />
-          )}
+          <Look item={dummyLookData[currentLook]} />
           <div
             style={{
               width: "400px",
@@ -84,12 +88,7 @@ const Looks = () => {
             View Product
           </Link>
         </div>
-        <button
-          onClick={() => {
-            setCurrentLook((prev) => (prev + 1) % dummyLookData.length);
-          }}
-          className="control right"
-        ></button>
+        <button onClick={handleNextMove} className="control right"></button>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@
   width: 400px;
   height: 600px;
   object-fit: cover;
+  pointer-events: none;
 }
 .lookbook-video {
   width: 400px;
