@@ -4,6 +4,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid red;
+}
+.lookbook-container-inner {
+  max-width: 400px;
+  position: relative;
+}
+.control {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  z-index: 100;
+  background-color: transparent;
+  border: none;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+  top: 0;
 }
 
 .view-product {
@@ -19,4 +39,6 @@
   text-transform: uppercase;
   position: absolute;
   bottom: 0;
+  overflow: hidden;
+  border-radius: 10px;
 }

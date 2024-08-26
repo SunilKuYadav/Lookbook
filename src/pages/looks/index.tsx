@@ -22,32 +22,53 @@ const Looks = () => {
 
   return (
     <div className="lookbook-container">
-      <Look item={dummyLookData[currentLook]} />
-      <div
-        style={{
-          width: "400px",
-          display: "flex",
-          position: "absolute",
-          bottom: "50px",
-        }}
-      >
-        {dummyLookData.map((item, index) => {
-          return (
-            <Slider
-              totalSize={dummyLookData.length}
-              active={currentLook === index}
-              done={index < currentLook}
-              totalTime={Timer}
-            />
-          );
-        })}
+      <div className="lookbook-container-inner">
+        <button
+          onClick={() => {
+            setCurrentLook((prev) => {
+              const val = (prev - 1) % dummyLookData.length;
+              console.log(val);
+              return val === -1 ? dummyLookData.length - 1 : val;
+            });
+          }}
+          className="control left"
+        ></button>
+        <div>
+          <Look item={dummyLookData[currentLook]} />
+          <div
+            style={{
+              width: "400px",
+              display: "flex",
+              position: "absolute",
+              bottom: "50px",
+            }}
+          >
+            {dummyLookData.map((item, index) => {
+              return (
+                <Slider
+                  key={item.id}
+                  totalSize={dummyLookData.length}
+                  active={currentLook === index}
+                  done={index < currentLook}
+                  totalTime={Timer}
+                />
+              );
+            })}
+          </div>
+          <Link
+            className="view-product"
+            to={`product/${dummyLookData[currentLook].id}`}
+          >
+            View Product
+          </Link>
+        </div>
+        <button
+          onClick={() => {
+            setCurrentLook((prev) => (prev + 1) % dummyLookData.length);
+          }}
+          className="control right"
+        ></button>
       </div>
-      <Link
-        className="view-product"
-        to={`product/${dummyLookData[currentLook].id}`}
-      >
-        View Product
-      </Link>
     </div>
   );
 };
