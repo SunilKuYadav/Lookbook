@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Lookbook - Fashion E-commerce Platform
+## Overview
+This project is designed to showcase fashion products in a lookbook format for a fashion e-commerce platform. The lookbook allows users to view images and videos of products, complete with interactive features such as annotations, timers, and navigation options.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
+- Preview Images/Videos: View available images and videos in the lookbook.
+- Image Timer: Each image is displayed with a 5-second timer/progress bar.
+- Video Preview: Videos are played till completion with the option to mute/unmute.
+- Tap left/right to navigate between previews.
+- Swipe up/down to switch between looks.
+- Product Details: Clicking on a product in an annotation will navigate to the product detail page.
 
-In the project directory, you can run:
+## Getting Started
+To get started with this project, follow the steps below:
 
-### `npm start`
+### Prerequisites
+- Node.js and npm installed on your machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository:
+2. cd your-repository
+3. npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This will start the development server and open the application in your default browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+for live link hosted using gh-pages 
+```
+https://sunilkuyadav.github.io/Lookbook/
+```
