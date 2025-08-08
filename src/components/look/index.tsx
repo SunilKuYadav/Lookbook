@@ -28,7 +28,7 @@ const Look = ({ item }: LookProps) => {
               loop
             >
               <source src={item.video} type="video/mp4" />
-              Your browser does not support the video tag.
+              Your browser does not support the video tag, Please use another tab
             </video>
             <button onClick={toggleMute} className="mute-button">
               {isMuted ? "Unmute" : "Mute"}
